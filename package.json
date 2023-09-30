@@ -1,0 +1,22 @@
+{
+  "name": "prueba_tecnica",
+  "version": "1.0.0",
+  "description": "todo-service",
+  "main": "index.js",
+  "scripts": {
+    "test": "test"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+ssh://git@github.com/TaiKamilla/tc_tech_test.git"
+  },
+  "keywords": [
+    "todo-service"
+  ],
+  "author": "Yafar Uasani",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/TaiKamilla/tc_tech_test/issues"
+  },
+  "homepage": "https://github.com/TaiKamilla/tc_tech_test#readme"
+}

@@ -1,0 +1,34 @@
+version: '3.7'
+
+services:
+  todo-sercice:
+    build: .
+    image: todo-service
+    container_name: todo-service
+    environment:
+      - MONGO_URL=mongodb://mongo:27017/todo-service
+    ports:
+      - 3000:3000
+    depends_on:
+      - mongodb
+    volumes:
+      - .:/usr/src/todo-service
+    networks:
+      - todo-network
+
+  mongodb:
+    image: mongo:6
+    container_name: mongodb
+    ports:
+      - 27017:27017
+    volumes:
+      - ./dbdata:/data/db
+    networks:
+      - todo-network
+
+volumes:
+  dbdata:
+
+networks:
+  todo-network:
+    driver: bridge
