@@ -1,7 +1,7 @@
 version: '3.7'
 
 services:
-  todo-sercice:
+  todo-service:
     build: .
     image: todo-service
     container_name: todo-service
@@ -10,15 +10,18 @@ services:
     ports:
       - 3000:3000
     depends_on:
-      - mongodb
+      - mongo
+    links:
+      - mongo
     volumes:
       - .:/usr/src/todo-service
     networks:
       - todo-network
+    command: sh -c "npm install && npm start"
 
-  mongodb:
+  mongo:
     image: mongo:6
-    container_name: mongodb
+    container_name: mongo
     ports:
       - 27017:27017
     volumes:
